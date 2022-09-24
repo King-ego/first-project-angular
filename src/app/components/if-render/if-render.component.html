@@ -1,0 +1,7 @@
+<div class="class">
+  <p *ngIf="canShow">estamos monstrando</p>
+  <p *ngIf="name === 'Diego'; else nameNotFound">{{ name }}</p>
+  <ng-template #nameNotFound>
+    <div>Suma {{ name }}</div>
+  </ng-template>
+</div>
