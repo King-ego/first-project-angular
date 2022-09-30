@@ -1,0 +1,27 @@
+<div class="class">
+  <h2>Two way data binding</h2>
+  <form (submit)="onSubmit($event)">
+    <input type="text" [(ngModel)]="name" name="name" placeholder="nome" />
+    <input
+      type="text"
+      [(ngModel)]="andress"
+      name="andress"
+      placeholder="andress"
+    />
+    <input type="text" [(ngModel)]="age" name="age" placeholder="age" />
+    <input type="text" [(ngModel)]="cel" name="cel" placeholder="cel" />
+    <input type="submit" value="Enviar" />
+  </form>
+
+  <div *ngIf="persons.length; else nameNotFound">
+    <div *ngFor="let person of persons">
+      <p>{{ person.name }}</p>
+      <p>{{ person.andress }}</p>
+      <p>{{ person.age }}</p>
+      <p>{{ person.cel }}</p>
+    </div>
+  </div>
+  <ng-template #nameNotFound>
+    <div>Not Found</div>
+  </ng-template>
+</div>
