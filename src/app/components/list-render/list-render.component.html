@@ -8,4 +8,18 @@
     </li>
   </ul>
   <h3>{{ animalDetails }}</h3>
+
+  <div>
+    <h2>List persons</h2>
+    <div *ngFor="let person of persons">
+      <div>
+        <a routerLink="/list/{{ person?.id }}">{{ person?.id }}</a>
+      </div>
+      <div>{{ person?.firstName }}</div>
+      <div>{{ person?.lastName }}</div>
+      <div>{{ person?.description }}</div>
+      <div><button (click)="removePerson(person.id)">Deletar</button></div>
+      <div class="border-bottom">{{ person?.nation }}</div>
+    </div>
+  </div>
 </div>
