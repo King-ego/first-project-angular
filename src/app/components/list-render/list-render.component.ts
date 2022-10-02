@@ -19,6 +19,9 @@ export class ListRenderComponent implements OnInit {
   animalDetails: string = ''
 
   persons: Person[] = []
+  personUpdate!: Person
+
+  isShow: boolean = false
 
   constructor(private readonly listservice: ListService) {
     this.getPerson()
@@ -45,5 +48,14 @@ export class ListRenderComponent implements OnInit {
   removeAnimal(animals: Animal[], animal: Animal): void {
     console.log('remove animal')
     this.animals = this.listservice.remove(animals, animal)
+  }
+
+  updatePersonData(person: Person) {
+    this.personUpdate = person
+    this.setShow()
+  }
+
+  setShow() {
+    this.isShow = !this.isShow
   }
 }

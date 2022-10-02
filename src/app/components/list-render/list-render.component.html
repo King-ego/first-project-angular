@@ -19,7 +19,13 @@
       <div>{{ person?.lastName }}</div>
       <div>{{ person?.description }}</div>
       <div><button (click)="removePerson(person.id)">Deletar</button></div>
+      <div><button (click)="updatePersonData(person)">Open Modal</button></div>
       <div class="border-bottom">{{ person?.nation }}</div>
     </div>
   </div>
 </div>
+<app-modal-update
+  (onShow)="setShow()"
+  [person]="personUpdate"
+  [show]="isShow"
+></app-modal-update>

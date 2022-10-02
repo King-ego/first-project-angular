@@ -1,0 +1,41 @@
+<div *ngIf="show" class="containerModal">
+  <div class="containerModal__content">
+    <div (click)="closeModal()">close modal</div>
+    <form (submit)="onSubmit($event)">
+      <div>{{ person.id }}</div>
+      <div>
+        <input
+          [(ngModel)]="firstName"
+          type="text"
+          name="name"
+          placeholder="{{ person.firstName || 'firstName' }}"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="sobrenome"
+          [(ngModel)]="lastName"
+          placeholder="{{ person.lastName || 'lastName' }}"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="description"
+          [(ngModel)]="description"
+          placeholder="{{ person.description || 'description' }}"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="nation"
+          [(ngModel)]="nation"
+          placeholder="{{ person.nation || 'nation' }}"
+        />
+      </div>
+      <input type="submit" value="Enviar" />
+    </form>
+  </div>
+</div>

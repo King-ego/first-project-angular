@@ -12,7 +12,6 @@ export class CreatePersonComponent implements OnInit {
   protected lastName: string = ''
   protected description: string = ''
   protected nation: string = ''
-  protected isActive: boolean = true
 
   constructor(private readonly service: ListService) {}
 
@@ -25,13 +24,9 @@ export class CreatePersonComponent implements OnInit {
       lastName: this.lastName,
       description: this.description,
       nation: this.nation,
-      isActive: this.isActive,
+      isActive: false,
     }
 
     this.service.postperson(person).subscribe((person) => console.log(person))
-  }
-
-  toggle() {
-    console.log(this.isActive)
   }
 }

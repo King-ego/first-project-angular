@@ -16,7 +16,8 @@ import { ListRenderComponent } from './components/list-render/list-render.compon
 import { PipeComponent } from './components/pipe/pipe.component'
 import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
-import { CreatePersonComponent } from './components/create-person/create-person.component'
+import { CreatePersonComponent } from './components/create-person/create-person.component';
+import { ModalUpdateComponent } from './components/modal-update/modal-update.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CreatePersonComponent } from './components/create-person/create-person.
     TwoWayBindComponent,
     ItemDetailComponent,
     CreatePersonComponent,
+    ModalUpdateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

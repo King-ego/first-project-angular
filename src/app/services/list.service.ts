@@ -36,6 +36,10 @@ export class ListService {
     return this.http.post<PostPerson>(this.urlApi, person)
   }
 
+  patchperson(id: string, person: PostPerson): Observable<PostPerson> {
+    return this.http.patch<PostPerson>(`${this.urlApi}/${id}`, person)
+  }
+
   removeperson(id: string): Observable<{ text: string }> {
     return this.http.delete<{ text: string }>(`${this.urlApi}/${id}`)
   }
