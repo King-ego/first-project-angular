@@ -4,7 +4,12 @@ import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Observable } from 'rxjs'
-import { GetOnlyPerson, GetPerson } from '../interface/Person'
+import {
+  GetOnlyPerson,
+  GetPerson,
+  Person,
+  PostPerson,
+} from '../interface/Person'
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +30,10 @@ export class ListService {
 
   getonlyperson(id: string): Observable<GetOnlyPerson> {
     return this.http.get<GetOnlyPerson>(`${this.urlApi}/${id}`)
+  }
+
+  postperson(person: PostPerson): Observable<PostPerson> {
+    return this.http.post<PostPerson>(this.urlApi, person)
   }
 
   removeperson(id: string): Observable<{ text: string }> {

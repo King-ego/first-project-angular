@@ -15,7 +15,8 @@ import { ChangeNumberComponent } from './components/change-number/change-number.
 import { ListRenderComponent } from './components/list-render/list-render.component'
 import { PipeComponent } from './components/pipe/pipe.component'
 import { TwoWayBindComponent } from './components/two-way-bind/two-way-bind.component';
-import { ItemDetailComponent } from './components/item-detail/item-detail.component'
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { CreatePersonComponent } from './components/create-person/create-person.component'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ItemDetailComponent } from './components/item-detail/item-detail.compon
     PipeComponent,
     TwoWayBindComponent,
     ItemDetailComponent,
+    CreatePersonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

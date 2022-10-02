@@ -1,0 +1,32 @@
+<div class="class">
+  <form (submit)="onSubmit($event)" class="flex">
+    <input
+      [(ngModel)]="firstName"
+      type="text"
+      name="firstName"
+      placeholder="firstName"
+    />
+    <input
+      [(ngModel)]="lastName"
+      type="text"
+      name="lastName"
+      placeholder="lastName"
+    />
+    <input
+      [(ngModel)]="nation"
+      type="text"
+      name="nation"
+      placeholder="nation"
+    />
+    <input
+      [(ngModel)]="description"
+      type="text"
+      name="description"
+      placeholder="description"
+    />
+    <div>
+      <input type="checkbox" name="isActive" [(ngModel)]="isActive" checked />
+    </div>
+    <input type="submit" value="Enviar" />
+  </form>
+</div>
