@@ -23,7 +23,12 @@ export class ModalUpdateComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  closeModal(): void {
+  closeModal(ev: MouseEvent): void {
+    const target = ev.target
+    const current = ev.currentTarget
+
+    if (current !== target) return
+
     this.onShow.emit()
   }
 

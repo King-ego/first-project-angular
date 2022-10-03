@@ -1,6 +1,6 @@
-<div *ngIf="show" class="containerModal">
+<section *ngIf="show" (click)="closeModal($event)" class="containerModal">
   <div class="containerModal__content">
-    <div (click)="closeModal()">close modal</div>
+    <div (click)="closeModal($event)">close modal</div>
     <form (submit)="onSubmit($event)">
       <div>{{ person.id }}</div>
       <div>
@@ -38,4 +38,4 @@
       <input type="submit" value="Enviar" />
     </form>
   </div>
-</div>
+</section>
