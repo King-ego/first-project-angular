@@ -36,7 +36,7 @@ export class ListRenderComponent implements OnInit {
   getPerson(): void {
     this.listservice
       .getpersons()
-      .subscribe((persons) => (this.persons = persons.data))
+      .subscribe((persons) => (this.persons = persons.data.items))
   }
 
   removePerson(id: string): void {

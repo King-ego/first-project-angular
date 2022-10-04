@@ -16,7 +16,7 @@ export interface PostPerson {
 }
 
 export interface GetPerson {
-  data: Person[]
+  data: { items: Person[] }
   text: string
 }
 
