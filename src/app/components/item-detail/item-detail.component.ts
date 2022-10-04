@@ -11,7 +11,8 @@ import { ListService } from 'src/app/services/list.service'
   styleUrls: ['./item-detail.component.scss'],
 })
 export class ItemDetailComponent implements OnInit {
-  person?: Person
+  protected person!: Person
+  protected isShow: boolean = false
 
   constructor(
     private readonly listservice: ListService,
@@ -27,5 +28,9 @@ export class ItemDetailComponent implements OnInit {
     this.listservice
       .getonlyperson(id)
       .subscribe((person) => (this.person = person.data))
+  }
+
+  setShow() {
+    this.isShow = !this.isShow
   }
 }

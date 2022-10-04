@@ -1,40 +1,35 @@
-import { Animal } from 'src/app/interface/Animal'
 import { Injectable } from '@angular/core'
-
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-
 import { Observable } from 'rxjs'
-import {
-  GetOnlyPerson,
-  GetPerson,
-  Person,
-  PostPerson,
-} from '../interface/Person'
+import { environment } from '../../environments/environment'
+
+import { GetOnlyPerson, GetPerson, PostPerson } from '../interface/Person'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ListService {
-  private readonly urlApi = 'http://localhost:3333/api/persons'
+  private readonly urlApi = environment.apiUrl
+
   constructor(private readonly http: HttpClient) {}
 
-  getpersons(): Observable<GetPerson> {
+  public getpersons(): Observable<GetPerson> {
     return this.http.get<GetPerson>(this.urlApi)
   }
 
-  getonlyperson(id: string): Observable<GetOnlyPerson> {
+  public getonlyperson(id: string): Observable<GetOnlyPerson> {
     return this.http.get<GetOnlyPerson>(`${this.urlApi}/${id}`)
   }
 
-  postperson(person: PostPerson): Observable<PostPerson> {
+  public postperson(person: PostPerson): Observable<PostPerson> {
     return this.http.post<PostPerson>(this.urlApi, person)
   }
 
-  patchperson(id: string, person: PostPerson): Observable<PostPerson> {
+  public patchperson(id: string, person: PostPerson): Observable<PostPerson> {
     return this.http.patch<PostPerson>(`${this.urlApi}/${id}`, person)
   }
 
-  removeperson(id: string): Observable<{ text: string }> {
+  public removeperson(id: string): Observable<{ text: string }> {
     return this.http.delete<{ text: string }>(`${this.urlApi}/${id}`)
   }
 }

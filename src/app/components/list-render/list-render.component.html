@@ -1,16 +1,37 @@
-<div class="class">
-  <div>
+<div class="list-render">
+  <div *ngIf="persons.length" class="list-render__container">
     <h2>List persons</h2>
-    <div *ngFor="let person of persons">
+    <div class="list-render__content">
+      <div>#</div>
+      <div>FirstName</div>
+      <div>LastName</div>
+      <div>Description</div>
+      <div>Nation</div>
+      <div>Action</div>
+    </div>
+    <div *ngFor="let person of persons" class="list-render__box__aba">
       <div>
-        <a routerLink="/list/{{ person?.id }}">{{ person?.id }}</a>
+        <a
+          routerLink="/list/{{ person.id }}"
+          [ngClass]="person.isActive ? '' : ['disabled', 'opacity50']"
+          >{{ person.id.slice(-5) | uppercase }}</a
+        >
       </div>
-      <div>{{ person?.firstName }}</div>
-      <div>{{ person?.lastName }}</div>
-      <div>{{ person?.description }}</div>
-      <div><button (click)="removePerson(person.id)">Deletar</button></div>
-      <div><button (click)="updatePersonData(person)">Open Modal</button></div>
-      <div class="border-bottom">{{ person?.nation }}</div>
+      <div>{{ person.firstName }}</div>
+      <div>{{ person.lastName }}</div>
+      <div>{{ person.description }}</div>
+      <div>{{ person?.nation }}</div>
+      <div>
+        <button (click)="openPopOut(person.id)">Deletar</button>
+        <div *ngIf="person.id === person_id_popOut">
+          <app-popout
+            [isShowPopOut]="isPopOut"
+            (onRemove)="confirmRemove(person.id)"
+            (onHide)="cancelRemove()"
+          ></app-popout>
+        </div>
+      </div>
+      <div><button (click)="updatePersonData(person)">Editar</button></div>
     </div>
   </div>
 </div>

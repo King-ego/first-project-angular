@@ -6,11 +6,23 @@
 }
 
 body {
-  margin-bottom: 500px;
+  background: #b1b1b1;
 }
 
 .class {
   border-bottom: 1px solid red;
   padding: 2em;
   margin-bottom: 1em;
+}
+
+.relative {
+  position: relative;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.opacity50 {
+  opacity: 0.5;
 }

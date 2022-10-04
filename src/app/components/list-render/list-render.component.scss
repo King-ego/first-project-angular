@@ -1,4 +1,32 @@
-.border-bottom {
-  border-bottom: 1px solid green;
-  margin-bottom: 8px;
+.list-render {
+  margin: 0 8px;
+  &__container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    margin: 16px 0;
+    display: flex;
+    width: 100%;
+    background: white;
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  &__box {
+    &__aba {
+      display: flex;
+      width: 100%;
+      background: white;
+      border: 1px solid black;
+      border-bottom: none;
+      padding: 8px;
+
+      &:last-of-type {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
 }

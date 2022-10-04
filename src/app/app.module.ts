@@ -9,7 +9,9 @@ import { FirstComponentComponent } from './components/first-component/first-comp
 import { ListRenderComponent } from './components/list-render/list-render.component'
 import { ItemDetailComponent } from './components/item-detail/item-detail.component'
 import { CreatePersonComponent } from './components/create-person/create-person.component'
-import { ModalUpdateComponent } from './components/modal-update/modal-update.component'
+import { ModalUpdateComponent } from './components/modal-update/modal-update.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { PopoutComponent } from './components/popout/popout.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ModalUpdateComponent } from './components/modal-update/modal-update.com
     ItemDetailComponent,
     CreatePersonComponent,
     ModalUpdateComponent,
+    MenuComponent,
+    PopoutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

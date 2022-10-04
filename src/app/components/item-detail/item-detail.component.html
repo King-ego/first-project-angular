@@ -1,9 +1,16 @@
-<p>item-detail works!</p>
-
 <div class="class" *ngIf="person">
   <div>{{ person.id }}</div>
   <div>{{ person.firstName }}</div>
   <div>{{ person.lastName }}</div>
   <div>{{ person.description }}</div>
   <div>{{ person.nation }}</div>
+
+  <button (click)="setShow()">Editar</button>
 </div>
+
+<app-modal-update
+  *ngIf="person"
+  [person]="person"
+  (onShow)="setShow()"
+  [show]="isShow"
+></app-modal-update>

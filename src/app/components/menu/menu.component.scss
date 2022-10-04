@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__nav {
+    gap: 20px;
+    display: flex;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &__link {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
