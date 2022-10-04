@@ -9,13 +9,6 @@ import { ListService } from 'src/app/services/list.service'
   styleUrls: ['./list-render.component.scss'],
 })
 export class ListRenderComponent implements OnInit {
-  animals: Animal[] = [
-    { name: 'Dorca', type: 'dog', age: 1 },
-    { name: 'Tom', type: 'cat', age: 2 },
-    { name: 'Frida', type: 'dog', age: 3 },
-    { name: 'Hog', type: 'horse', age: 4 },
-  ]
-
   animalDetails: string = ''
 
   persons: Person[] = []
@@ -43,11 +36,6 @@ export class ListRenderComponent implements OnInit {
     console.log('... removido', id)
     this.listservice.removeperson(id).subscribe((text) => console.log(text))
     this.getPerson()
-  }
-
-  removeAnimal(animals: Animal[], animal: Animal): void {
-    console.log('remove animal')
-    this.animals = this.listservice.remove(animals, animal)
   }
 
   updatePersonData(person: Person) {

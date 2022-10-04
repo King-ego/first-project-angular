@@ -18,12 +18,6 @@ export class ListService {
   private readonly urlApi = 'http://localhost:3333/api/persons'
   constructor(private readonly http: HttpClient) {}
 
-  remove(animals: Animal[], animal: Animal): Animal[] {
-    console.log('animal in animals')
-
-    return animals.filter((a) => animal.name !== a.name)
-  }
-
   getpersons(): Observable<GetPerson> {
     return this.http.get<GetPerson>(this.urlApi)
   }
