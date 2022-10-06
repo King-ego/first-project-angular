@@ -1,28 +1,29 @@
 <div class="list-render">
-  <div *ngIf="persons.length" class="list-render__container">
+  <div *ngIf="persons?.length" class="list-render__container">
     <h2>List persons</h2>
     <div class="list-render__content">
-      <div>#</div>
-      <div>FirstName</div>
-      <div>LastName</div>
-      <div>Description</div>
-      <div>Nation</div>
-      <div>Action</div>
+      <div class="list-render__box__card">#</div>
+      <div class="list-render__box__card">FirstName</div>
+      <div class="list-render__box__card">LastName</div>
+      <div class="list-render__box__card">Description</div>
+      <div class="list-render__box__card">Nation</div>
+      <div class="list-render__box__card">Action</div>
     </div>
     <div *ngFor="let person of persons" class="list-render__box__aba">
-      <div>
+      <div class="list-render__box__card">
         <a
           routerLink="/list/{{ person.id }}"
           [ngClass]="person.isActive ? '' : ['disabled', 'opacity50']"
           >{{ person.id.slice(-5) | uppercase }}</a
         >
       </div>
-      <div>{{ person.firstName }}</div>
-      <div>{{ person.lastName }}</div>
-      <div>{{ person.description }}</div>
-      <div>{{ person?.nation }}</div>
-      <div>
+      <div class="list-render__box__card">{{ person.firstName }}</div>
+      <div class="list-render__box__card">{{ person.lastName }}</div>
+      <div class="list-render__box__card">{{ person.description }}</div>
+      <div class="list-render__box__card">{{ person?.nation }}</div>
+      <div class="list-render__box__card">
         <button (click)="openPopOut(person.id)">Deletar</button>
+        <button (click)="updatePersonData(person)">Editar</button>
         <div *ngIf="person.id === person_id_popOut">
           <app-popout
             [isShowPopOut]="isPopOut"
@@ -31,7 +32,6 @@
           ></app-popout>
         </div>
       </div>
-      <div><button (click)="updatePersonData(person)">Editar</button></div>
     </div>
   </div>
 </div>
