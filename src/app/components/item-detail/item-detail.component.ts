@@ -11,7 +11,7 @@ import { ListService } from 'src/app/services/list.service'
   styleUrls: ['./item-detail.component.scss'],
 })
 export class ItemDetailComponent implements OnInit {
-  protected person!: Person[]
+  protected person!: Person
   protected isShow: boolean = false
 
   constructor(

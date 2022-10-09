@@ -1,16 +1,16 @@
-<div class="class" *ngIf="person?.length">
-  <div>{{ person[0].id }}</div>
-  <div>{{ person[0].firstName }}</div>
-  <div>{{ person[0].lastName }}</div>
-  <div>{{ person[0].description }}</div>
-  <div>{{ person[0].nation }}</div>
+<div class="class" *ngIf="person">
+  <div>{{ person.id }}</div>
+  <div>{{ person.firstName }}</div>
+  <div>{{ person.lastName }}</div>
+  <div>{{ person.description }}</div>
+  <div>{{ person.nation }}</div>
 
   <button (click)="setShow()">Editar</button>
 </div>
 
 <app-modal-update
-  *ngIf="person?.length"
-  [person]="person[0]"
+  *ngIf="person"
+  [person]="person"
   (onShow)="setShow()"
   [show]="isShow"
 ></app-modal-update>

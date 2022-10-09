@@ -21,6 +21,6 @@ export interface GetPerson {
 }
 
 export interface GetOnlyPerson {
-  data: Person[]
+  data: Person
   text: string
 }
